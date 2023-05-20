@@ -10,7 +10,6 @@ st.write("""
 # Cat and Dog Classifier"""
 )
 file=st.file_uploader("Choose a photo of dog or cat",type=["jpg","png"])
-A
 import cv2
 from PIL import Image,ImageOps
 import numpy as np
