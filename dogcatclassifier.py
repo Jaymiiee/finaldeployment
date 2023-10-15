@@ -29,7 +29,7 @@ else:
     class_names=['Cat', 'Dog']
     string="OUTPUT : "+class_names[np.argmax(prediction)]
     st.success(string)
-
+  
   # User feedback section
     st.header("User Feedback")
     user_feedback = st.checkbox("Was this classification correct?")
