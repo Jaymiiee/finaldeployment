@@ -39,6 +39,9 @@ else:
 st.header("User Feedback")
 user_feedback = st.checkbox("Was this classification correct?")
 if st.button("Submit Feedback"):
+    # Placeholder for collect_user_feedback function
+    # You need to implement this function to collect user feedback
+    # and store it in a data structure, e.g., a DataFrame
     collect_user_feedback(file.name, class_names[np.argmax(prediction)], user_feedback)
     st.success("Feedback submitted successfully!")
 
@@ -46,7 +49,11 @@ if st.button("Submit Feedback"):
     st.session_state.feedback_data_exists = True
 
     if st.session_state.feedback_data_exists:
-        # Indent the following lines
+        # Placeholder for total_feedback and correct_feedback calculation
+        # You need to calculate these values based on the collected feedback
+        total_feedback = 0  # Placeholder for the total feedback count
+        correct_feedback = 0  # Placeholder for the correct feedback count
+
         st.subheader("Feedback Statistics")
         st.write(f"Total Feedback Submitted: {total_feedback}")
         st.write(f"Correct Feedback: {correct_feedback}")
