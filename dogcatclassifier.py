@@ -39,9 +39,6 @@ else:
 st.header("User Feedback")
 user_feedback = st.checkbox("Was this classification correct?")
 if st.button("Submit Feedback"):
-    # Placeholder for collect_user_feedback function
-    # You need to implement this function to collect user feedback
-    # and store it in a data structure, e.g., a DataFrame
     collect_user_feedback(file.name, class_names[np.argmax(prediction)], user_feedback)
     st.success("Feedback submitted successfully!")
 
