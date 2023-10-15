@@ -1,5 +1,6 @@
 import streamlit as st
 import tensorflow as tf
+import pandas as pd
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -31,19 +32,16 @@ else:
     st.success(string)
   
   # User feedback section
-    st.header("User Feedback")
-    user_feedback = st.checkbox("Was this classification correct?")
+   # User feedback section
+st.header("User Feedback")
+user_feedback = st.checkbox("Was this classification correct?")
 
-    if st.button("Submit Feedback"):
-        collect_user_feedback(file.name, class_names[np.argmax(prediction)], user_feedback)
-        st.success("Feedback submitted successfully!")
+if st.button("Submit Feedback"):
+    collect_user_feedback(file.name, class_names[np.argmax(prediction)], user_feedback)
+    st.success("Feedback submitted successfully!")
 
-    # Display statistics or insights based on user interactions and collected feedback
-    if st.session_state.feedback_data_exists:
-        feedback_data = pd.read_csv('user_feedback.csv')
-
-        total_feedback = len(feedback_data)
-        correct_feedback = len(feedback_data[feedback_data['UserFeedback']])
+    # Set feedback_data_exists in session_state to indicate that feedback data exists
+    st.session_state.feedback_data_exists = True
 
         st.subheader("Feedback Statistics")
         st.write(f"Total Feedback Submitted: {total_feedback}")
