@@ -31,11 +31,8 @@ else:
     string="OUTPUT : "+class_names[np.argmax(prediction)]
     st.success(string)
   
-  # User feedback section
-   # User feedback section
 st.header("User Feedback")
 user_feedback = st.checkbox("Was this classification correct?")
-
 if st.button("Submit Feedback"):
     collect_user_feedback(file.name, class_names[np.argmax(prediction)], user_feedback)
     st.success("Feedback submitted successfully!")
